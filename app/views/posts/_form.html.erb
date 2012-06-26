@@ -10,20 +10,17 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <br/>
+  <div class="field">    
+    <%= f.text_field :title, :class=>'form-inline', :placeholder => :name  %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class=>'form-inline', :placeholder => :content  %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date, :placeholder => :date  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary'  %>
   </div>
 <% end %>

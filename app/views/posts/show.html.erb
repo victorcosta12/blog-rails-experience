@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
+<h2>
   <%= @post.title %>
-</p>
+</h2>
 
 <p>
-  <b>Content:</b>
   <%= @post.content %>
 </p>
 
 <p>
-  <b>Date:</b>
-  <%= @post.date %>
+  posted:
+  <%= time_ago_in_words @post.date %> ago
 </p>
-
+<br/>
 <h3>Comments</h3>
 
 <% @post.comments.each do |c| %>
@@ -29,22 +27,19 @@
 
 <%= form_for(@comment) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :class=>'form-inline', :placeholder => :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class=>'form-inline', :placeholder => :email  %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class=>'form-inline', :placeholder => :content  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
 
 <% end %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-mini' %> |
+<%= link_to 'Back', posts_path, :class => 'btn btn-mini' %>
