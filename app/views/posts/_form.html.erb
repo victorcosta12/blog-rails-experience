@@ -1,4 +1,4 @@
-<%= form_for(@post) do |f| %>
+<%= form_for @post, :html => { :multipart => true } do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -16,6 +16,9 @@
   </div>
   <div class="field">
     <%= f.text_area :content, :class=>'form-inline', :placeholder => :content  %>
+  </div>
+  <div class="field">
+    <%= f.file_field :image, :class=>'form-inline' %>
   </div>
   <div class="field">
     <%= f.datetime_select :date, :placeholder => :date  %>
