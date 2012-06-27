@@ -9,6 +9,7 @@
 
 .DS_Store
 *.swp
+public/system/
 
 
 # Ignore the default SQLite database.
